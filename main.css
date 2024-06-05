@@ -1,0 +1,19 @@
+img {
+left: 40%;
+top: 75px;
+position: relative;
+}
+body {
+background: burlywood;
+}
+button {
+left: 90%;
+position: relative;
+}
+h1 {
+position: relative;
+left: 90%;
+}
+p {
+text-align: center;
+}
