@@ -1,25 +1,15 @@
 console.log("main.js loaded");
 
-//vars
-let points = 0;
-let cost =25;
-let multi =1;
-//end
+const axios = require('axios');
 
-function add(){
-  points+=multi;
-  document.getElementById("points").innerHTML = 'Points: ' + points;
-}
-function upgrade(){
-if (points >= cost) {
-  points-=cost;
-  multi*=2
-  cost*=2
-  document.getElementById("points").innerHTML = 'Points: ' + points;
-  document.getElementById("multi").innerHTML = 'Multi: x' + multi;
-  document.getElementById("text").innerHTML = 'Upgraded';
-  document.getElementById("upgrade").innerHTML = 'Upgrade for ' + cost + ' points'
-} else {
-  document.getElementById("text").innerHTML = 'You need atleast ' + cost + ' to get this upgrade!';
-} 
-}
+axios.get('https://www.roblox.com/home/api', {
+  headers: { 'Cookie': '.ROBLOSECURITY=yourCookieValue' }
+})
+  .then(response => {
+    // Access cookies and other headers here
+    const cookies = response.headers['set-cookie'];
+    console.log(cookies);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
